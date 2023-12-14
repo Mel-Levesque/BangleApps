@@ -1,0 +1,30 @@
+{
+  "id": "followtherecipe",
+  "name": "Follow The Recipe",
+  "shortName":"FollowTheRecipe",
+  "icon": "icon.png",
+  "version": "0.01",
+  "description": "followtherecipe is a bangle.js app to follow a recipe step by step",
+  "type": "app",
+  "tags": "tools",
+  "supports": [
+    "BANGLEJS2"
+  ],
+  "allow_emulator": true,
+  "interface": "interface.html",
+  "readme": "README.md",
+  "data": [
+    {"name":"followtherecipe.json"}
+  ],
+  "storage": [
+    {
+      "name": "followtherecipe.app.js",
+      "url": "app.js"
+    },
+    {
+      "name": "followtherecipe.img",
+      "url": "app-icon.js",
+      "evaluate": true
+    }
+  ]
+}
