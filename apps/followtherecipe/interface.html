@@ -100,7 +100,7 @@
         }
 
         var settings = {};
-        function onInit(){
+        function loadRecipe(){
             document.getElementById("mealSelected").innerHTML = "";
             Util.showModal("Loading...");
             Puck.eval(`require('Storage').readJSON("${fileRecipeJson}")`, (data) => {
@@ -158,6 +158,10 @@
                 }
             }
         });
+
+        function onInit() {
+        loadRecipe();
+      }
     </script>
   </body>
 </html>
