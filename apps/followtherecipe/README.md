@@ -13,6 +13,7 @@ TO-DOs:
 
 - [X] Display random recipe on start
 - [ ] Choose a recipe by web page
+- [ ] Edit the recipe and save it to BangleJs
 - [ ] improve GUI (color, fonts, ...)
 
 ## Contributors

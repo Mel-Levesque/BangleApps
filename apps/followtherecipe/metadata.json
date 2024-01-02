@@ -1,10 +1,10 @@
 {
   "id": "followtherecipe",
   "name": "Follow The Recipe",
-  "shortName":"FollowTheRecipe",
+  "shortName":"FTR",
   "icon": "icon.png",
   "version": "0.01",
-  "description": "followtherecipe is a bangle.js app to follow a recipe step by step",
+  "description": "Follow The Recipe (FTR) is a bangle.js app to follow a recipe step by step",
   "type": "app",
   "tags": "tools",
   "supports": [
