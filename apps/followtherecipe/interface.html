@@ -103,18 +103,19 @@
         function loadRecipe(){
             console.log("Loading settings from BangleJs...");
             // console.log("Loading settings from BangleJs...");
-            // document.getElementById("mealSelected").innerHTML = "";
-            // Util.showModal("Loading...");
-            // Puck.eval(`require('Storage').readJSON("${fileRecipeJson}")`, (data) => {
-            // document.getElementById("testUtil").innerHTML = JSON.stringify(
-            //     data,
-            //     null,
-            //     2
-            // );
-            // Util.hideModal();
-            // });
+            document.getElementById("mealSelected").innerHTML = "";
+            Util.showModal("Loading...");
+            Puck.eval(`require('Storage').readJSON("${fileRecipeJson}")`, (data) => {
+            document.getElementById("testUtil").innerHTML = JSON.stringify(
+                data,
+                null,
+                2
+            );
+            Util.hideModal();
+            });
             
           try {
+            Util.showModal("Loading...");
             Util.readStorageJSON(`${fileRecipeJson}`, data=>{
               if(data){
                 settings = data;
