@@ -1,4 +1,5 @@
 const storage = require("Storage");
+let settings = require("Storage").readJSON("ftr.json");
 const locale = require('locale');
 var ENV = process.env;
 var W = g.getWidth(), H = g.getHeight();
@@ -8,7 +9,7 @@ var Layout = require("Layout");
 let maxLenghtHorizontal = 16;
 let maxLenghtvertical = 6;
 
-let uri = "https://www.themealdb.com/api/json/v1/1/search.php?s=Lamb_Tagine";
+let uri = "https://www.themealdb.com/api/json/v1/1/random.php";
 
 var colors = {0: "#70f", 1:"#70d", 2: "#70g", 3: "#20f", 4: "#30f"};
 

@@ -41,6 +41,7 @@
     <script>
         let uri = "";
         let recipe = {};
+        const fileRecipeJson = "followtherecipe.json";
 
         function checkInput(){
             let inputStr = document.getElementById("recipeLink").value;
@@ -102,7 +103,7 @@
         function onInit(){
             document.getElementById("mealSelected").innerHTML = "";
             Util.showModal("Loading...");
-            Puck.eval(`require('Storage').readJSON("followtherecipe.json")`, (data) => {
+            Puck.eval(`require('Storage').readJSON("${fileRecipeJson}")`, (data) => {
             document.getElementById("testUtil").innerHTML = JSON.stringify(
                 data,
                 null,
@@ -126,7 +127,20 @@
         //       console.log(ex);
         //   }
         }
-        onInit();
+        //onInit();
+
+    //     function loadTodos() {
+    //     document.getElementById("info").innerHTML = "";
+    //     Util.showModal("Loading...");
+    //     Puck.eval(`require('Storage').readJSON("${fileTodoList}")`, (data) => {
+    //       document.getElementById("todos").innerHTML = JSON.stringify(
+    //         data,
+    //         null,
+    //         2
+    //       );
+    //       Util.hideModal();
+    //     });
+    //   }
 
         document.getElementById("upload").addEventListener("click", function() {
             if(recipe != null){
