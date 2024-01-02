@@ -101,6 +101,7 @@
 
         var settings = {};
         function loadRecipe(){
+            console.log("Loading settings from BangleJs...");
             document.getElementById("mealSelected").innerHTML = "";
             Util.showModal("Loading...");
             Puck.eval(`require('Storage').readJSON("${fileRecipeJson}")`, (data) => {
@@ -111,7 +112,7 @@
             );
             Util.hideModal();
             });
-            console.log("Loading settings from BangleJs...");
+            
         //   try {
         //     Util.readStorageJSON("followtherecipe.json", data=>{
         //       if(data){
@@ -160,8 +161,9 @@
         });
 
         function onInit() {
-        loadRecipe();
-      }
+            loadRecipe();
+        }
+        onInit();
     </script>
   </body>
 </html>
