@@ -30,6 +30,9 @@
         <p>Recipe to be imported to BangleJs: <span id="mealSelected"></span></p>
         <button id="upload" class="btn btn-primary">Save recipe into BangleJs</button>
     </p>
+    <p id="testUtil">
+
+    </p>
 
     <div id="responseContainer">
 
@@ -97,21 +100,31 @@
 
         var settings = {};
         function onInit(){
-          console.log("Loading settings from BangleJs...");
-          try {
-            Util.readStorageJSON("followtherecipe.json", data=>{
-              if(data){
-                settings = data;
-                console.log("Got settings", settings);
-                document.getElementById("mealSelected").innerHTML = settings.strMeal;
-                console.log("Loaded recipe from BangleJs.");
-                checkInput();
-              }
+            document.getElementById("mealSelected").innerHTML = "";
+            Util.showModal("Loading...");
+            Puck.eval(`require('Storage').readJSON("followtherecipe.json")`, (data) => {
+            document.getElementById("testUtil").innerHTML = JSON.stringify(
+                data,
+                null,
+                2
+            );
+            Util.hideModal();
             });
-          } catch(ex) {
-              console.log("(Warning) Could not load data from BangleJs.");
-              console.log(ex);
-          }
+            console.log("Loading settings from BangleJs...");
+        //   try {
+        //     Util.readStorageJSON("followtherecipe.json", data=>{
+        //       if(data){
+        //         settings = data;
+        //         console.log("Got settings", settings);
+        //         document.getElementById("mealSelected").innerHTML = settings.strMeal;
+        //         console.log("Loaded recipe from BangleJs.");
+        //         checkInput();
+        //       }
+        //     });
+        //   } catch(ex) {
+        //       console.log("(Warning) Could not load data from BangleJs.");
+        //       console.log(ex);
+        //   }
         }
         onInit();
 
