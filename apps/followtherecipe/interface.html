@@ -99,7 +99,7 @@
         function onInit(){
           console.log("Loading settings from BangleJs...");
           try {
-            Util.readStorageJSON("ftr.json", data=>{
+            Util.readStorageJSON("followtherecipe.json", data=>{
               if(data){
                 settings = data;
                 console.log("Got settings", settings);
@@ -121,7 +121,7 @@
                     //settings.apikey = document.getElementById("apikey").value;
                     settings = recipe;
                     Util.showModal("Saving...");
-                    Util.writeStorage("ftr.json", JSON.stringify(settings), ()=>{
+                    Util.writeStorage("followtherecipe.json", JSON.stringify(settings), ()=>{
                         Util.hideModal();
                     });
                     console.log("Sent settings!");
